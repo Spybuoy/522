@@ -2,13 +2,14 @@
     "assignment_name": "Assignment 1",
     "contributors": [
         {
-            "name": "Jordan Matelsky",
-            "pennkey": "matelsky"
+            "name": "Chakradhar Paladi, Jayadev Chevireddi",
+            "pennkey": "19167508, 47756045"
+            
         }
     ],
     "sources": [
-        "https://example.com",
-        "Conversations with TA (include TA's name)",
-        "LLM (include information about the LLM and how it was used)"
+        "https://chat.openai.com/chat - ChatGPT to check for meaning of assertion errors",
+        "https://medium.com/analytics-vidhya/linear-regression-from-scratch-in-python-b6501f91c82d",
+        "522 W2_D1 Notebook video on Linear regression"
     ]
 }
