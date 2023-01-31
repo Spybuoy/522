@@ -2,9 +2,12 @@
     "assignment_name": "Assignment 1",
     "contributors": [
         {
-            "name": "Chakradhar Paladi, Jayadev Chevireddi",
-            "pennkey": "19167508, 47756045"
-            
+            "name": "Chakradhar Paladi",
+            "pennkey": "19167508"
+        },
+        {
+            "name": "Jayadev Chevireddi",
+            "pennkey": "47756045"
         }
     ],
     "sources": [
