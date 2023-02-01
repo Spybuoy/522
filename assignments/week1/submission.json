@@ -1,8 +1,8 @@
 {
     "assignment_name": "Assignment 1",
     "contributors": [
-        {"name": "Chakradhar Paladi", "pennkey": "paladi"},
-        {"name": "Jayadev Chevireddi", "pennkey": "jayadev"}
+        {"name": "19167508", "pennkey": "paladi"},
+
     ],
     "sources": [
         "https://chat.openai.com/chat - ChatGPT to check for meaning of assertion errors",
