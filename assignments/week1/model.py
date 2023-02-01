@@ -1,61 +1,92 @@
-# Import your model:
-from model import LinearRegression
-from sklearn.datasets import fetch_california_housing
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error
 import numpy as np
-from typing import Tuple
 
 
-def get_housing_data() -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+class LinearRegression:
     """
-    Get the California housing data from sklearn.
-    (https://scikit-learn.org/stable/modules/generated/sklearn.datasets.fetch_california_housing.html)
+    LinearRegression Class
+    """
 
-    Arguments:
-        None
+    def __init__(self):
+        self.w = None
+        self.b = None
 
-    Returns:
-        X_train (np.ndarray): The training input data.
-        X_test (np.ndarray): The test input data.
-        y_train (np.ndarray): The training output data.
-        y_test (np.ndarray): The test output data.
+    def fit(self, X: np.ndarray, y: np.ndarray) -> np.ndarray:
+        """
+        fit
+        """
+        # stacking ones to get biases
+        X = np.hstack((np.ones((X.shape[0], 1)), X))
+
+        # Closeform to get weights
+        self.w = np.linalg.inv(X.T @ X) @ X.T @ y
+
+        # since we've added bias, we need to separate them
+        self.b = self.w[0]
+        self.w = self.w[1:]
+
+    def predict(self, X: np.ndarray) -> np.ndarray:
+        """
+        predict
+        """
+        # stacking ones to get biases
+        X = np.hstack((np.ones((X.shape[0], 1)), X))
+
+        # predicting using wx+b
+        y_pred = X @ np.hstack((self.b, self.w))
+        return y_pred
+
+
+class GradientDescentLinearRegression(LinearRegression):
+    """
+    GradientDescentLinearRegression
+    """
 
     """
-    housing = fetch_california_housing()
-    # Split the data into training and test sets:
-    X_train, X_test, y_train, y_test = train_test_split(
-        housing.data, housing.target, test_size=0.5, random_state=42
-    )
-    return X_train, X_test, y_train, y_test
-
-
-def main():
+    A linear regression model that uses gradient descent to fit the model.
     """
-    Run the main program, which trains a linear regression model on the
-    California housing data.
 
-    Arguments:
-        None
+    def fit(
+        self, X: np.ndarray, y: np.ndarray, lr: float = 0.01, epochs: int = 1000
+    ) -> None:
+        """
+        fit
+        """
+        # stacking ones to get biases
+        X = np.hstack((np.ones((X.shape[0], 1)), X))
 
-    Returns:
-        None
+        # Setting initial weights
+        self.w = np.zeros(X.shape[1])
+        self.b = 0
 
-    """
-    # Get the data:
-    X_train, X_test, y_train, y_test = get_housing_data()
+        # loop for gradient descent
+        for i in range(epochs):
+            # predicting using wx+b
+            y_pred = X @ self.w + self.b
 
-    # Create a linear regression model:
-    lr = LinearRegression()
+            # gradient calc, we just are substituting to already differentiated equation
+            dw = (2 / X.shape[0]) * X.T @ (y_pred - y)
+            db = (2 / X.shape[0]) * np.sum(y_pred - y)
 
-    # Fit the model to the training data:
-    lr.fit(X_train, y_train)
+            # updating the weights
+            self.w -= lr * dw
+            self.b -= lr * db
 
-    # Make predictions on the test data:
-    y_pred = lr.predict(X_test)
+    def predict(self, X: np.ndarray) -> np.ndarray:
+        """
+        predict
+        """
+        """
+        Predict the output for the given input.
 
-    # Compute the mean squared error:
-    mse = mean_squared_error(y_test, y_pred)
+        Arguments:
+            X (np.ndarray): The input data.
 
-    # Print the mean squared error:
-    print("Mean squared error: {:.2f}".format(mse))
+        Returns:
+            np.ndarray: The predicted output.
+
+        """
+        X = np.hstack((np.ones((X.shape[0], 1)), X))
+
+        # predicting using wx+b
+        y_pred = X @ self.w + self.b
+        return y_pred
