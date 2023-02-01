@@ -1,7 +1,8 @@
 {
     "assignment_name": "Assignment 1",
     "contributors": [
-        {"name": "19167508", "pennkey": "paladi"},
+        {"name": "Chakradhar Paladi", "pennkey": "paladi"},
+        {"name": "Jayadev Chevireddi", "pennkey": "jayadev"}
 
     ],
     "sources": [
