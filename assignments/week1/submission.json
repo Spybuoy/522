@@ -1,18 +1,12 @@
 {
     "assignment_name": "Assignment 1",
     "contributors": [
-        {
-            "name": "Chakradhar Paladi",
-            "pennkey": "paladi"
-        },
-        {
-            "name": "Jayadev Chevireddi",
-            "pennkey": "jayadev"
-        }
+        {"name": "Chakradhar Paladi", "pennkey": "paladi"},
+        {"name": "Jayadev Chevireddi", "pennkey": "jayadev"},
     ],
     "sources": [
         "https://chat.openai.com/chat - ChatGPT to check for meaning of assertion errors",
         "https://medium.com/analytics-vidhya/linear-regression-from-scratch-in-python-b6501f91c82d",
-        "522 W2_D1 Notebook video on Linear regression"
-    ]
+        "522 W2_D1 Notebook video on Linear regression",
+    ],
 }
