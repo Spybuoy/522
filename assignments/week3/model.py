@@ -32,7 +32,10 @@ class MLP(nn.Module):
         """
         super(MLP, self).__init__()
         self.fc1 = torch.nn.Linear(input_size, hidden_size)
+        self.bn1 = nn.BatchNorm1d(32)
         self.fc2 = torch.nn.Linear(hidden_size, num_classes)
+        self.bn2 = nn.BatchNorm1d(num_classes)
+        self.dropout = nn.Dropout(0.10)
 
     def forward(self, x: torch.tensor) -> torch.tensor:
         """
@@ -47,6 +50,6 @@ class MLP(nn.Module):
         """
         foward pass
         """
-        x = torch.nn.functional.relu(self.fc1(x))
-        x = self.fc2(x)
+        x = self.dropout(torch.nn.functional.relu(self.bn1(self.fc1(x))))
+        x = self.dropout(self.bn2(self.fc2(x)))
         return x
