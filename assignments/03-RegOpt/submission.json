@@ -1,12 +1,14 @@
 {
     "assignment_name": "RegOpt",
     "contributors": [
-        {
-            "name": "Chakradhar Paladi",
-            "pennkey": "paladi"
-        }
+        {"name": "Chakradhar Paladi", "pennkey": "paladi"},
+        {"name": "Jayadev Chevireddi", "pennkey": "jayadev"}
+
     ],
     "sources": [
-        "Don't forget to list your sources/attribution here!    "
+        "ChatGPT for syntax and information of modules",
+        "https://pytorch.org/docs/stable/_modules/torch/optim/lr_scheduler.html",
+        "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate",
+        "https://www.youtube.com/watch?v=gbA9M4Ix6xw"
     ]
 }
