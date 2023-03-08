@@ -2,12 +2,12 @@ from typing import Callable
 import torch
 import torch.optim
 import torch.nn as nn
-from torchvision.transforms import Compose, ToTensor
+from torchvision.transforms import Compose, ToTensor, RandomHorizontalFlip
 
 
 class CONFIG:
-    batch_size = 8
-    num_epochs = 8
+    batch_size = 128
+    num_epochs = 6
 
     optimizer_factory: Callable[
         [nn.Module], torch.optim.Optimizer

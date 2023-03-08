@@ -1,12 +1,16 @@
 {
     "assignment_name": "Convolutions",
     "contributors": [
-        {
-            "name": "Change this to your name",
-            "pennkey": "MyPennKey"
-        }
+        {"name": "Chakradhar Paladi", "pennkey": "paladi"},
+        {"name": "Jayadev Chevireddi", "pennkey": "jayadev"}
+
     ],
     "sources": [
-        "Don't forget to list your sources/attribution here!"
+        "ChatGPT for syntax and debugging",
+        "https://stats.stackexchange.com/questions/302144/how-to-speed-up-training-of-a-neural-network",
+        "https://pytorch.org/docs/stable/optim.html",
+        "https://towardsdatascience.com/optimizers-for-training-neural-network-59450d71caf6#:~:text=Adam%20is%20the%20best%20optimizers,optimizers%20with%20dynamic%20learning%20rate.",
+        "https://towardsdatascience.com/7-tips-to-choose-the-best-optimizer-47bb9c1219e",
+        "https://stackoverflow.com/questions/65160023/any-advice-on-how-to-make-this-cnn-training-faster"
     ]
 }
